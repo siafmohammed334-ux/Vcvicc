@@ -1,0 +1,30 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>مساعد الدراسة</title><link rel="stylesheet" href="style.css"></head><body>
+<header><h1>📚 مساعد الدراسة</h1><button id="gear">⚙️</button></header>
+<main>
+<section id="t1" class="tab on">
+ <div class="card center"><input id="lTitle" placeholder="✍️ اكتب اسم المحاضرة (مثال: فيزياء - المحاضرة 3)"><div id="timer">00:00</div>
+ <div class="row"><button id="bStart" class="big">🎙️ ابدأ الآن</button>
+ <button id="bPause" disabled>⏸️ إيقاف مؤقت</button><button id="bStop" disabled>⏹️ إيقاف</button></div></div>
+ <div class="card"><h3>القراءة المباشرة</h3><div id="live" class="reading">اكتب اسم المحاضرة ثم اضغط ابدأ الآن وسيظهر الكلام هنا…</div></div>
+ <h2>المحاضرات المحفوظة</h2><div id="lectures"></div>
+</section>
+<section id="t2" class="tab">
+ <div class="card"><input type="file" id="pdfIn" accept="application/pdf">
+ <div class="row"><input id="pFrom" type="number" min="1" placeholder="من صفحة"><input id="pTo" type="number" min="1" placeholder="إلى صفحة">
+ <button id="pSum">✨ لخّص</button></div></div>
+ <div id="pSummary" class="card reading" hidden></div><div id="pages"></div>
+</section>
+<section id="t3" class="tab">
+ <div class="card"><div class="row"><select id="sDay"><option>السبت</option><option>الأحد</option><option>الإثنين</option><option>الثلاثاء</option><option>الأربعاء</option><option>الخميس</option><option>الجمعة</option></select>
+ <input id="sTime" type="time"><input id="sTimeEnd" type="time"></div>
+ <input id="sName" placeholder="المادة"><input id="sRoom" placeholder="القاعة / المكان"><button id="sAdd" class="big">➕ إضافة</button></div>
+ <div id="sched"></div>
+</section>
+</main>
+<nav><button data-t="t1" class="on">🎙️<br>التسجيل</button><button data-t="t2">📄<br>PDF</button><button data-t="t3">🗓️<br>الجدول</button></nav>
+<div id="modal" hidden><div class="card"><h3>الإعدادات</h3>
+<p>مفتاح Anthropic API (اختياري، لتلخيص ذكي):</p><input id="key" type="password" placeholder="sk-ant-...">
+<div class="row"><button id="keySave" class="big">حفظ</button><button id="keyClose">إغلاق</button></div></div></div>
+<script src="lib/pdf.min.js"></script><script src="app.js"></script></body></html>
